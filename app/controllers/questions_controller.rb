@@ -2,7 +2,7 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.xml
   def index
-    @questions = Question.all
+    @questions = Question.ordered_by_latest_answer.all
 
     respond_to do |format|
       format.html # index.html.erb

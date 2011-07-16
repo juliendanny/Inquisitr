@@ -6,6 +6,8 @@ class Question < ActiveRecord::Base
   validates_presence_of :title
 
   before_validation :adds_question_mark
+  
+  scope :ordered_by_latest_answer, order("updated_at DESC")
 
   protected
 
